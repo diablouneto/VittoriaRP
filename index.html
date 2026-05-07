@@ -17,10 +17,7 @@
 
 body{
     height:100vh;
-
-    /* NOUVEAU FOND */
     background:url("https://i.imgur.com/lY7W2LO.jpeg") no-repeat center/cover;
-
     display:flex;
     justify-content:center;
     align-items:center;
@@ -123,11 +120,12 @@ body::before{
     width:220px;
     display:flex;
     flex-direction:column;
-    gap:8px;
+    height:100%;
 }
 
 .menu button{
     flex:1;
+    margin:4px 0;
 
     border:none;
     border-radius:10px;
@@ -147,7 +145,7 @@ body::before{
 }
 
 .menu button:hover{
-    transform:translateX(3px);
+    transform:translateX(4px);
     filter:brightness(1.1);
 }
 
@@ -184,7 +182,7 @@ body::before{
     line-height:1.6;
 }
 
-/* BLOCS REGLEMENT */
+/* BLOCS */
 
 .rule-box{
     margin-top:18px;
@@ -202,6 +200,7 @@ body::before{
 .rule-box:hover{
     background:rgba(255,255,255,0.12);
     transform:translateY(-2px);
+    box-shadow:0 0 18px rgba(120,120,255,0.2);
 }
 
 .rule-box h3{
@@ -266,6 +265,7 @@ body::before{
     <div id="presentation" class="page active">
 
         <div class="content">
+
             <h2>Présentation</h2>
 
             <div class="rule-box">
@@ -275,6 +275,7 @@ body::before{
                     Retrouvez ici toutes les informations importantes du serveur.
                 </p>
             </div>
+
         </div>
 
     </div>
@@ -284,6 +285,7 @@ body::before{
     <div id="entreprises" class="page">
 
         <div class="content">
+
             <h2>Liste des entreprises</h2>
 
             <div class="rule-box">
@@ -292,6 +294,7 @@ body::before{
                     Ajoutez vos entreprises ici.
                 </p>
             </div>
+
         </div>
 
     </div>
@@ -299,6 +302,8 @@ body::before{
     <!-- REGLEMENT -->
 
     <div id="reglementPage" class="page">
+
+        <!-- MENU -->
 
         <div class="menu">
 
@@ -310,6 +315,8 @@ body::before{
 
         </div>
 
+        <!-- CONTENU -->
+
         <div class="content">
 
             <!-- NOTIONS -->
@@ -319,27 +326,104 @@ body::before{
                 <h2>Notions RP</h2>
 
                 <p>
-                    Ici, vous retrouverez les notions importantes pour le bon déroulement du RP.
+                    Ici, vous retrouverez les notions essentielles au bon déroulement du RolePlay.
                 </p>
 
                 <div class="rule-box">
-                    <h3>RP</h3>
+                    <h3>PowerGaming</h3>
                     <p>
-                        Le RolePlay consiste à jouer un personnage de manière réaliste.
+                        Effectuer des actions impossibles ou irréalistes dans la vraie vie afin d’obtenir un avantage en jeu.
                     </p>
                 </div>
 
                 <div class="rule-box">
-                    <h3>Pain RP</h3>
+                    <h3>MetaGaming</h3>
                     <p>
-                        Vous devez simuler la douleur de votre personnage après une blessure ou un accident.
+                        Utiliser des informations obtenues en dehors du jeu afin d’influencer ou d’aider votre personnage en RP.
                     </p>
                 </div>
 
                 <div class="rule-box">
-                    <h3>Fear RP</h3>
+                    <h3>PainRP</h3>
                     <p>
-                        Votre personnage doit avoir peur pour sa vie dans les situations dangereuses.
+                        Le PainRP consiste à simuler et exprimer correctement la douleur physique ressentie par votre personnage.
+                    </p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>NoFear</h3>
+                    <p>
+                        Ne pas jouer la peur face à une situation dangereuse, comme être braqué ou menacé de mort.
+                    </p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>FreeKill</h3>
+                    <p>
+                        Tuer un joueur sans raison RP valable ni véritable scène préalable.
+                    </p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>ForceRP</h3>
+                    <p>
+                        Forcer un joueur à participer à une scène incohérente, abusive ou dépassant les limites du RP acceptable.
+                    </p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>FairPlay</h3>
+                    <p>
+                        Adopter un comportement respectueux et jouer dans l’objectif de créer des scènes agréables pour tous les joueurs.
+                    </p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>WinRP</h3>
+                    <p>
+                        Vouloir absolument gagner une scène RP sans laisser d’issue ou sans accepter la défaite.
+                    </p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>StreamHack</h3>
+                    <p>
+                        Utiliser un live, une rediffusion ou un stream afin d’obtenir des informations RP.
+                    </p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>UseBug</h3>
+                    <p>
+                        Exploiter volontairement un bug ou un glitch du jeu afin d’obtenir un avantage.
+                    </p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>PIT</h3>
+                    <p>
+                        Frapper volontairement un véhicule avec un autre dans le but de le ralentir ou de lui infliger des dégâts.
+                    </p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>CopBait</h3>
+                    <p>
+                        Provoquer volontairement les forces de l’ordre afin de déclencher une poursuite ou une interpellation inutile.
+                    </p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>FreeLoot</h3>
+                    <p>
+                        Fouiller ou voler un joueur sans aucune scène RP préalable ou justification valable.
+                    </p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>Cohérence RP</h3>
+                    <p>
+                        Votre personnage doit garder un comportement logique et cohérent avec son histoire et la situation RP.
                     </p>
                 </div>
 
@@ -480,7 +564,7 @@ body::before{
             <div class="rule-box">
                 <h3>Carte</h3>
                 <p>
-                    Ajoutez ici la map du serveur.
+                    Carte du serveur à venir.
                 </p>
             </div>
 

@@ -17,7 +17,10 @@
 
 body{
     height:100vh;
+    overflow:hidden;
+
     background:url("https://i.imgur.com/lY7W2LO.jpeg") no-repeat center/cover;
+
     display:flex;
     justify-content:center;
     align-items:center;
@@ -106,12 +109,14 @@ body::before{
 .page{
     flex:1;
     display:none;
+    min-height:0;
 }
 
 .page.active{
     display:flex;
     gap:15px;
     animation:fadeSlide 0.35s ease;
+    min-height:0;
 }
 
 /* MENU */
@@ -121,6 +126,7 @@ body::before{
     display:flex;
     flex-direction:column;
     height:100%;
+    flex-shrink:0;
 }
 
 .menu button{
@@ -168,6 +174,25 @@ body::before{
     backdrop-filter:blur(10px);
 
     overflow-y:auto;
+    overflow-x:hidden;
+
+    min-height:0;
+}
+
+/* SCROLLBAR */
+
+.content::-webkit-scrollbar{
+    width:8px;
+}
+
+.content::-webkit-scrollbar-track{
+    background:rgba(255,255,255,0.05);
+    border-radius:10px;
+}
+
+.content::-webkit-scrollbar-thumb{
+    background:#7d8cff;
+    border-radius:10px;
 }
 
 /* TITRES */
@@ -195,6 +220,8 @@ body::before{
     border-left:5px solid #7d8cff;
 
     transition:0.2s;
+
+    flex-shrink:0;
 }
 
 .rule-box:hover{
@@ -331,100 +358,72 @@ body::before{
 
                 <div class="rule-box">
                     <h3>PowerGaming</h3>
-                    <p>
-                        Effectuer des actions impossibles ou irréalistes dans la vraie vie afin d’obtenir un avantage en jeu.
-                    </p>
+                    <p>Effectuer des actions impossibles ou irréalistes dans la vraie vie afin d’obtenir un avantage en jeu.</p>
                 </div>
 
                 <div class="rule-box">
                     <h3>MetaGaming</h3>
-                    <p>
-                        Utiliser des informations obtenues en dehors du jeu afin d’influencer ou d’aider votre personnage en RP.
-                    </p>
+                    <p>Utiliser des informations obtenues en dehors du jeu afin d’influencer ou d’aider votre personnage en RP.</p>
                 </div>
 
                 <div class="rule-box">
                     <h3>PainRP</h3>
-                    <p>
-                        Le PainRP consiste à simuler et exprimer correctement la douleur physique ressentie par votre personnage.
-                    </p>
+                    <p>Le PainRP consiste à simuler et exprimer correctement la douleur physique ressentie par votre personnage.</p>
                 </div>
 
                 <div class="rule-box">
                     <h3>NoFear</h3>
-                    <p>
-                        Ne pas jouer la peur face à une situation dangereuse, comme être braqué ou menacé de mort.
-                    </p>
+                    <p>Ne pas jouer la peur face à une situation dangereuse.</p>
                 </div>
 
                 <div class="rule-box">
                     <h3>FreeKill</h3>
-                    <p>
-                        Tuer un joueur sans raison RP valable ni véritable scène préalable.
-                    </p>
+                    <p>Tuer un joueur sans raison RP valable ni véritable scène préalable.</p>
                 </div>
 
                 <div class="rule-box">
                     <h3>ForceRP</h3>
-                    <p>
-                        Forcer un joueur à participer à une scène incohérente, abusive ou dépassant les limites du RP acceptable.
-                    </p>
+                    <p>Forcer un joueur à participer à une scène incohérente ou abusive.</p>
                 </div>
 
                 <div class="rule-box">
                     <h3>FairPlay</h3>
-                    <p>
-                        Adopter un comportement respectueux et jouer dans l’objectif de créer des scènes agréables pour tous les joueurs.
-                    </p>
+                    <p>Adopter un comportement respectueux et agréable pour tous les joueurs.</p>
                 </div>
 
                 <div class="rule-box">
                     <h3>WinRP</h3>
-                    <p>
-                        Vouloir absolument gagner une scène RP sans laisser d’issue ou sans accepter la défaite.
-                    </p>
+                    <p>Vouloir absolument gagner une scène RP sans accepter la défaite.</p>
                 </div>
 
                 <div class="rule-box">
                     <h3>StreamHack</h3>
-                    <p>
-                        Utiliser un live, une rediffusion ou un stream afin d’obtenir des informations RP.
-                    </p>
+                    <p>Utiliser un live ou un stream afin d’obtenir des informations RP.</p>
                 </div>
 
                 <div class="rule-box">
                     <h3>UseBug</h3>
-                    <p>
-                        Exploiter volontairement un bug ou un glitch du jeu afin d’obtenir un avantage.
-                    </p>
+                    <p>Exploiter volontairement un bug afin d’obtenir un avantage.</p>
                 </div>
 
                 <div class="rule-box">
                     <h3>PIT</h3>
-                    <p>
-                        Frapper volontairement un véhicule avec un autre dans le but de le ralentir ou de lui infliger des dégâts.
-                    </p>
+                    <p>Frapper volontairement un véhicule avec un autre afin de le stopper.</p>
                 </div>
 
                 <div class="rule-box">
                     <h3>CopBait</h3>
-                    <p>
-                        Provoquer volontairement les forces de l’ordre afin de déclencher une poursuite ou une interpellation inutile.
-                    </p>
+                    <p>Provoquer volontairement les forces de l’ordre afin de lancer une poursuite.</p>
                 </div>
 
                 <div class="rule-box">
                     <h3>FreeLoot</h3>
-                    <p>
-                        Fouiller ou voler un joueur sans aucune scène RP préalable ou justification valable.
-                    </p>
+                    <p>Voler ou fouiller un joueur sans scène RP valable.</p>
                 </div>
 
                 <div class="rule-box">
                     <h3>Cohérence RP</h3>
-                    <p>
-                        Votre personnage doit garder un comportement logique et cohérent avec son histoire et la situation RP.
-                    </p>
+                    <p>Votre personnage doit rester cohérent avec son histoire et la situation.</p>
                 </div>
 
             </div>
@@ -440,15 +439,6 @@ body::before{
                     <p>
                         Merci de lire attentivement ce règlement et de l’appliquer avec rigueur.
                         Aucun manquement ne sera toléré.
-                        <br><br>
-
-                        En rejoignant ce serveur, vous acceptez également de respecter les Conditions Générales d’Utilisation de Discord.
-                        <br><br>
-
-                        Ce règlement s’applique à l’écrit, à l’oral et en message privé.
-                        <br><br>
-
-                        Toute personne victime ou témoin d’un comportement inadapté doit contacter la modération avec preuves via ticket.
                     </p>
                 </div>
 
@@ -456,49 +446,32 @@ body::before{
                     <h3>I • Politesse et Respect</h3>
                     <p>
                         • Restez respectueux envers tous.<br>
-                        • Les insultes, discriminations et contenus NSFW sont interdits.<br>
-                        • Aucun racisme, sexisme, homophobie ou antisémitisme.<br>
-                        • Les débats toxiques ou puérils ne sont pas autorisés.<br>
-                        • Les contenus choquants sont interdits.
+                        • Les insultes et discriminations sont interdites.<br>
+                        • Aucun contenu NSFW.
                     </p>
                 </div>
 
                 <div class="rule-box">
-                    <h3>II • Communication et Comportement</h3>
+                    <h3>II • Communication</h3>
                     <p>
-                        • Pas de spam ni de flood.<br>
-                        • Les mentions @everyone et @here sont réservées au staff.<br>
-                        • En vocal : pas de cris, soundboard ou musique dérangeante.<br>
-                        • Si vous êtes absent, mutez votre micro ou quittez le vocal.
+                        • Pas de spam.<br>
+                        • Les mentions @everyone sont réservées au staff.<br>
+                        • Pas de cris ou soundboard en vocal.
                     </p>
                 </div>
 
                 <div class="rule-box">
-                    <h3>III • Publicité et Partage</h3>
+                    <h3>III • Publicité</h3>
                     <p>
-                        • Aucun lien externe n’est autorisé.<br>
-                        • Certains liens peuvent contenir des virus.<br>
-                        • Toute publicité est interdite sauf dans les salons prévus.
+                        • Aucun lien externe non autorisé.<br>
+                        • Toute publicité est interdite.
                     </p>
                 </div>
 
                 <div class="rule-box">
                     <h3>IV • Vie Privée</h3>
                     <p>
-                        • Faites attention à ce que vous partagez en ligne.<br>
                         • Ne divulguez jamais vos informations personnelles.
-                    </p>
-                </div>
-
-                <div class="rule-box">
-                    <h3>V • Sanctions</h3>
-                    <p>
-                        • Avertissement écrit<br>
-                        • Mute temporaire<br>
-                        • Bannissement temporaire<br>
-                        • Bannissement définitif
-                        <br><br>
-                        Toute contestation doit se faire via ticket.
                     </p>
                 </div>
 

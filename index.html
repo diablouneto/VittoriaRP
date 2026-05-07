@@ -106,49 +106,59 @@ body::before{
 
 /* PAGE */
 
-<!-- REMPLACE UNIQUEMENT CETTE PARTIE DU CSS -->
-
-<style>
-
-/* PAGE */
-
 .page{
     flex:1;
     display:none;
-    overflow:hidden;
+    min-height:0;
 }
 
 .page.active{
     display:flex;
     gap:15px;
     animation:fadeSlide 0.35s ease;
-    overflow:hidden;
+    min-height:0;
 }
 
 /* MENU */
 
 .menu{
     width:220px;
-    height:100%;
-
     display:flex;
     flex-direction:column;
-
-    gap:8px;
-
+    height:100%;
     flex-shrink:0;
 }
 
 .menu button{
     flex:1;
+    margin:4px 0;
+
+    border:none;
+    border-radius:10px;
+
+    color:#edf1ff;
+    font-size:15px;
+    cursor:pointer;
+
+    background:linear-gradient(
+        135deg,
+        #29368d,
+        #4854cf,
+        #5d6eff
+    );
+
+    transition:0.2s;
 }
 
-/* CONTENU PRINCIPAL */
+.menu button:hover{
+    transform:translateX(4px);
+    filter:brightness(1.1);
+}
+
+/* CONTENU */
 
 .content{
     flex:1;
-    height:100%;
-
     padding:25px;
 
     border-radius:16px;
@@ -163,46 +173,24 @@ body::before{
 
     backdrop-filter:blur(10px);
 
-    /* IMPORTANT */
-
-    overflow:hidden;
-
-    display:flex;
-    flex-direction:column;
-}
-
-/* ZONE QUI SCROLL */
-
-.section{
-    display:none;
-
-    /* IMPORTANT */
-
     overflow-y:auto;
     overflow-x:hidden;
 
-    height:100%;
-
-    padding-right:8px;
-}
-
-.section.active{
-    display:block;
-    animation:fadeSlide 0.3s ease;
+    min-height:0;
 }
 
 /* SCROLLBAR */
 
-.section::-webkit-scrollbar{
+.content::-webkit-scrollbar{
     width:8px;
 }
 
-.section::-webkit-scrollbar-track{
+.content::-webkit-scrollbar-track{
     background:rgba(255,255,255,0.05);
     border-radius:10px;
 }
 
-.section::-webkit-scrollbar-thumb{
+.content::-webkit-scrollbar-thumb{
     background:#7d8cff;
     border-radius:10px;
 }
@@ -475,31 +463,17 @@ body::before{
                 <div class="rule-box">
                     <h3>III • Publicité</h3>
                     <p>
-                        • Aucun lien externe n’est autorisé. Certains peuvent contenir des virus ou voler vos données. Vous êtes seuls responsables si vous cliquez dessus..<br>
-                        • Toute publicité pour d'autre serveur discord ou serveur RP est interdite.
+                        • Aucun lien externe non autorisé.<br>
+                        • Toute publicité est interdite.
                     </p>
                 </div>
 
                 <div class="rule-box">
                     <h3>IV • Vie Privée</h3>
                     <p>
-                        • Protégez votre vie privée : nous vous encourageons à être vigilants sur ce que vous partagez en ligne.
-                        • Ne divulguez jamais vos informations personnelles (photos, adresse, nom, numéro, etc.).
+                        • Ne divulguez jamais vos informations personnelles.
                     </p>
                 </div>
-                
-                <div class="rule-box">
-                    <h3>V • Sanctions</h3>
-                    <p>
-                        • Avertissement écrit
-                        • Mute temporaire
-                        • Bannissement temporaire
-                        • Bannissement définitif
-                        
-                        Une sanction n’a pas à être débattue publiquement.
-                        Toute contestation doit se faire uniquement via ticket.
-                    </p>
-                </div>                
 
             </div>
 

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Vittoria - Nova Life</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+    height:100vh;
+
+    /* IMAGE DE FOND */
+    background:url("https://i.imgur.com/lY7W2LO.jpeg") no-repeat center/cover;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* FOND FLOU */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    backdrop-filter:blur(8px);
+    background:rgba(15,15,40,0.6);
+    z-index:0;
+}
+
+/* CONTAINER */
+
+.container{
+    position:relative;
+    width:85%;
+    height:85%;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    z-index:1;
+}
+
+/* HEADER */
+
+.header{
+    height:55px;
+    border-radius:12px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#edf1ff;
+    font-size:20px;
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        rgba(45,55,150,0.95),
+        rgba(75,85,220,0.9)
+    );
+}
+
+/* NAVIGATION */
+
+.nav{
+    display:flex;
+    gap:10px;
+}
+
+.nav button{
+    flex:1;
+    height:45px;
+
+    border:none;
+    border-radius:10px;
+
+    color:#edf1ff;
+    font-size:15px;
+    cursor:pointer;
+
+    background:linear-gradient(
+        135deg,
+        #29368d,
+        #4854cf,
+        #5d6eff
+    );
+
+    transition:0.2s;
+}
+
+.nav button:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.1);
+}
+
+/* PAGE */
+
+.page{
+    flex:1;
+    display:none;
+}
+
+.page.active{
+    display:flex;
+    gap:15px;
+    animation:fadeSlide 0.35s ease;
+}
+
+/* MENU */
+
+.menu{
+    width:220px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.menu button{
+    flex:1;
+
+    border:none;
+    border-radius:10px;
+
+    color:#edf1ff;
+    font-size:15px;
+    cursor:pointer;
+
+    background:linear-gradient(
+        135deg,
+        #29368d,
+        #4854cf,
+        #5d6eff
+    );
+
+    transition:0.2s;
+}
+
+.menu button:hover{
+    transform:translateX(3px);
+    filter:brightness(1.1);
+}
+
+/* CONTENU */
+
+.content{
+    flex:1;
+    padding:25px;
+
+    border-radius:16px;
+
+    color:#edf1ff;
+
+    background:linear-gradient(
+        135deg,
+        rgba(35,45,130,0.9),
+        rgba(75,85,220,0.82)
+    );
+
+    backdrop-filter:blur(10px);
+
+    overflow-y:auto;
+}
+
+/* TITRES */
+
+.content h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.content p{
+    font-size:15px;
+    line-height:1.6;
+}
+
+/* BLOCS REGLEMENT */
+
+.rule-box{
+    margin-top:18px;
+    padding:18px 22px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,0.08);
+
+    border-left:5px solid #7d8cff;
+
+    transition:0.2s;
+}
+
+.rule-box:hover{
+    background:rgba(255,255,255,0.12);
+    transform:translateY(-2px);
+}
+
+.rule-box h3{
+    margin-bottom:8px;
+    font-size:20px;
+    color:white;
+}
+
+.rule-box p{
+    opacity:0.92;
+}
+
+/* ANIMATION */
+
+@keyframes fadeSlide{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* SECTIONS */
+
+.section{
+    display:none;
+}
+
+.section.active{
+    display:block;
+    animation:fadeSlide 0.3s ease;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+
+    <div class="header">
+        Vittoria Serious RP - Nova Life
+    </div>
+
+    <!-- NAV -->
+
+    <div class="nav">
+        <button onclick="showPage('presentation')">Présentation</button>
+        <button onclick="showPage('entreprises')">Liste entreprise</button>
+        <button onclick="showPage('reglementPage')">Règlement</button>
+        <button onclick="showPage('map')">Map</button>
+    </div>
+
+    <!-- PRESENTATION -->
+
+    <div id="presentation" class="page active">
+
+        <div class="content">
+            <h2>Présentation</h2>
+
+            <div class="rule-box">
+                <h3>Bienvenue</h3>
+                <p>
+                    Bienvenue sur Vittoria Serious RP.
+                    Retrouvez ici toutes les informations importantes du serveur.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ENTREPRISES -->
+
+    <div id="entreprises" class="page">
+
+        <div class="content">
+            <h2>Liste des entreprises</h2>
+
+            <div class="rule-box">
+                <h3>Aucune entreprise</h3>
+                <p>
+                    Ajoutez vos entreprises ici.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- REGLEMENT -->
+
+    <div id="reglementPage" class="page">
+
+        <div class="menu">
+
+            <button onclick="showSection('notion')">Notions</button>
+            <button onclick="showSection('reglement')">Règlement</button>
+            <button onclick="showSection('legal')">Légal</button>
+            <button onclick="showSection('illegal')">Illégal</button>
+            <button onclick="showSection('entreprise')">Entreprise</button>
+
+        </div>
+
+        <div class="content">
+
+            <!-- NOTIONS -->
+
+            <div id="notion" class="section active">
+
+                <h2>Notions RP</h2>
+
+                <div class="rule-box">
+                    <h3>RP</h3>
+                    <p>
+                        Le RolePlay consiste à jouer un personnage de manière réaliste.
+                    </p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>Pain RP</h3>
+                    <p>
+                        Vous devez simuler la douleur de votre personnage après une blessure ou un accident.
+                    </p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>Fear RP</h3>
+                    <p>
+                        Votre personnage doit avoir peur pour sa vie dans les situations dangereuses.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- REGLEMENT -->
+
+            <div id="reglement" class="section">
+
+                <h2>📜 Règlement du Serveur</h2>
+
+                <div class="rule-box">
+                    <h3>Bonjour et bienvenue !</h3>
+                    <p>
+                        Merci de lire attentivement ce règlement et de l’appliquer avec rigueur.
+                        Aucun manquement ne sera toléré.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- LEGAL -->
+
+            <div id="legal" class="section">
+
+                <h2>Légal</h2>
+
+                <div class="rule-box">
+                    <h3>Police</h3>
+                    <p>
+                        Respectez les procédures RP et les ordres hiérarchiques.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- ILLEGAL -->
+
+            <div id="illegal" class="section">
+
+                <h2>Illégal</h2>
+
+                <div class="rule-box">
+                    <h3>Braquages</h3>
+                    <p>
+                        Les braquages doivent respecter les règles du serveur.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- ENTREPRISE -->
+
+            <div id="entreprise" class="section">
+
+                <h2>Entreprise</h2>
+
+                <div class="rule-box">
+                    <h3>Gestion</h3>
+                    <p>
+                        Les entreprises doivent être gérées sérieusement.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MAP -->
+
+    <div id="map" class="page">
+
+        <div class="content">
+
+            <h2>Map</h2>
+
+            <div class="rule-box">
+                <h3>Carte</h3>
+                <p>
+                    Ajoutez ici la map du serveur.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function showPage(id){
+
+    document.querySelectorAll(".page").forEach(page=>{
+        page.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+}
+
+function showSection(id){
+
+    document.querySelectorAll(".section").forEach(section=>{
+        section.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+}
+
+</script>
+
+</body>
+</html>
